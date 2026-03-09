@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flex Layout</title>
+<title>Responsive Flex Layout</title>
 
 <style>
+
 *{
     box-sizing: border-box;
 }
@@ -24,14 +25,13 @@ header, footer{
 /* Aside */
 aside{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     color: #212121;
     background-color: #BBDEFB;
     flex-grow: 3;
 }
 
-/* Sections inside Aside */
+/* Sections */
 section{
     background-color: #FF4081;
     color: white;
@@ -39,14 +39,14 @@ section{
     margin: 0.5em;
 }
 
-/* Main content */
+/* Main area */
 main{
     background-color: #2196F3;
     color: white;
     flex-grow: 7;
 }
 
-/* Body layout */
+/* Page layout */
 body{
     display: flex;
     flex-direction: column;
@@ -56,13 +56,13 @@ body{
     margin: 0;
 }
 
-/* Row layout */
+/* Row container */
 .row{
     display: flex;
     flex-direction: row;
 }
 
-/* Middle section size */
+/* Middle section height */
 div.row{
     flex-grow: 8;
 }
@@ -73,6 +73,13 @@ div.row{
     flex-direction: column;
 }
 
+/* Responsive design for small screens */
+@media screen and (max-width: 600px) {
+    div.row{
+        flex-direction: column;
+    }
+}
+
 </style>
 </head>
 
@@ -81,18 +88,15 @@ div.row{
 <header>Header</header>
 
 <div class="row">
-
     <aside class="col">
         <section>Section 1</section>
         <section>Section 2</section>
     </aside>
 
     <main>Main</main>
-
 </div>
 
 <footer>Footer</footer>
 
 </body>
 </html>
- 
